@@ -15,7 +15,7 @@ h6 {
 }
 
 body {
-    background-color: #f3f3f3;
+    background-color: #CCFF66;
 }
 
 .clear-fix {
@@ -43,7 +43,7 @@ h2 {
     color: #999;
     line-height: 29px;
     padding: 10px;
-/*    background-color: #919191;*/
+    background-color: #CCFFCC;
 }
 
 h3 {
@@ -142,16 +142,29 @@ a {
 }
 
 .dark-gray {
-    background-color: #fff;
+<<<<<<< HEAD
+    background-color: #4a4a4a;
 }
 
 .right-green {
+    color: #cf6;
+||||||| merged common ancestors
   background-color: #4a4a4a;
+=======
+    background-color: #4a4a4a;
+>>>>>>> 11a98ed68f92ffa37ad765ad5fce26cc86bfed73
 }
 
 /* TODO: Replace with image later */
 #header {
+<<<<<<< HEAD
     background-color: #484848;
+    bckground-color: #CCFF66;
+||||||| merged common ancestors
+  background-color: #484848;
+=======
+    background-color: #484848;
+>>>>>>> 11a98ed68f92ffa37ad765ad5fce26cc86bfed73
 }
 
 .flex-box {
@@ -172,11 +185,6 @@ ul {
 }
 
 .white {
-    color: white;
-    background-color: white;
-}
-
-.whiteLetter {
     color: white;
 }
 
@@ -250,7 +258,6 @@ span {
 
 #footerContacts {
     text-align: center;
-    background: #484848;
 }
 
 @media only screen and (min-width: 750px) {

@@ -5,27 +5,27 @@ var model = {
     /*biography*/
     init: function() {
         this.bio = {
-            'name': 'Takahiro Morita',
+            'name': 'Durian Monkey',
             'role': 'Front-End Developer',
             'contacts': [{
-                'mobile': '06-1840-3964',
-                'email': 'morita657@gmail.com',
-                'github': 'https://github.com/Durian1-Monkey',
-                'twitter': 'No Twitter Account',
+                'mobile': 'XXX-XXXX-XXX',
+                'email': 'Durian@durian.com',
+                'github': 'https://github.com/Durian-Monkey',
+                'twitter': 'Durian@twitter.com',
                 'location': 'Bangkok, Thailand'
             }],
-            'welcomeMessage': 'Thank you for your visiting my resume page!!',
-            'skills': ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Git & GitHub', 'KnockoutJS', ''],
+            'welcomeMessage': 'Thank you for your visiting my page!!  Eat durian together!!',
+            'skills': ['Peeling durian hull', 'Planting durian trees', 'Making cold durian snacks', 'Samurai Spirits'],
             'biopic': 'images/fry.jpg'
         };
         /*Work*/
         this.work = {
             'jobs': [{
-                'employer': 'ARAYA INDUSTRY Co.,Ltd.',
+                'employer': 'Gorilla INDUSTRY Co.,Ltd.',
                 'title': 'Quality Control Engineer',
                 'location': 'Osaka,Japan',
                 'dates': '2013',
-                'description': 'Tests the properties our products such as bicycle rim, pipes used to build architectures as floor materials. Makes documentations to show the results of the tests. Faces our customers to respond their orders.'
+                'description': 'tests the properties our products such as bicycle rim, pipes used to build architectures as floor materials. Makes documentations to show the results of the tests. Faces our customers to respond their orders.'
             }, {
                 'employer': 'VSN, Inc',
                 'title': 'Mechanical Designer',
@@ -43,20 +43,15 @@ var model = {
         /*projects*/
         this.projects = {
             'projects': [{
-                'title': 'Classic Arcade Game Clone',
-                'dates': '2015',
-                'description': 'Recreating the classic arcade game Frogger and adding a number of entities to the game including the player characters and enemies. Developing with Object-Oriented JavaScript and HTML5 Canvas.',
-                'images': ['images/arcadegame.png']
+                'title': 'Check products',
+                'dates': '2013',
+                'description': 'Check the products which is used to build the architectures to transport in our clients with instruments such as a caliper,vernier caliper,micro meter',
+                'images': ['images/197x148.gif']
             }, {
-                'title': 'Neighborhoood Map',
-                'dates': '2016',
-                'description': 'The single-page application featuring a map of my neighborhood which I recommend and would like to visit. There are some functionalities, including: map markers to identify popular locations or places, a search functionto easily discover these locations, a listview to support simple browsing of all locations. And third-party API such as Wikipedia API is added to provide additional information about wach of these locations.',
-                'images': ['images/neighborhoodmap.png']
-            }, {
-                'title': 'Mobile Portfolio',
-                'dates': '2016',
-                'description': 'Optimizing a provided website with a number of performance - related issues. Achieving a target PageSpeed score and runs at 60 frames per second. ',
-                'images': ['images/websiteoptimization.png']
+                'title': 'Designing and tasting new type of durians',
+                'dates': '2014',
+                'description': 'designing products which is used as the parts of an automobile by CAD software, and test and investigate the properties such as durability, extensibility, waveform of vibration',
+                'images': ['images/197x148.gif']
             }]
         };
         //education
@@ -73,47 +68,27 @@ var model = {
                 'title': 'Intro to HTML and CSS',
                 'school': 'Udacity',
                 'date': '2015',
-                'url': 'https://www.udacity.com/courses/intro-to-html-and-css--ud304'
+                'url': 'https://www.udacity.comhttps://www.udacity.com'
             }, {
                 'title': 'Resposnsive images',
                 'school': 'Udacity',
                 'date': '2015',
-                'url': 'https://www.udacity.com/courses/responsive-images--ud882'
+                'url': 'https://www.udacity.com'
             }, {
                 'title': 'Resposnsive Web Design Fundamentals',
                 'school': 'Udacity',
                 'date': '2015',
-                'url': 'https://www.udacity.com/courses/responsive-web-design-fundamentals--ud893'
+                'url': 'https://www.udacity.com'
+            }, {
+                'title': 'JavaScript Basics',
+                'school': 'Udacity',
+                'date': '2015',
+                'url': 'https://www.udacity.com'
             }, {
                 'title': 'Intro to jQuery',
                 'school': 'Udacity',
                 'date': '2015',
-                'url': 'https://www.udacity.com/courses/intro-to-jquery--ud245'
-            }, {
-                'title': 'Object-Oriented JavaScript',
-                'school': 'Udacity',
-                'date': '2015',
-                'url': 'https://www.udacity.com/courses/object-oriented-javascript--ud015'
-            }, {
-                'title': 'Intro to AJAX',
-                'school': 'Udacity',
-                'date': '2015',
-                'url': 'https://www.udacity.com/courses/intro-to-ajax--ud110'
-            }, {
-                'title': 'Website Performance Optimization',
-                'school': 'Udacity',
-                'date': '2015',
-                'url': 'https://www.udacity.com/courses/website-performance-optimization--ud884'
-            }, {
-                'title': 'Browser Rendering Optimization',
-                'school': 'Udacity',
-                'date': '2015',
-                'url': 'https://www.udacity.com/courses/browser-rendering-optimization--ud860'
-            }, {
-                'title': 'JavaScript Testing',
-                'school': 'Udacity',
-                'date': '2015',
-                'url': 'https://www.udacity.com/courses/javascript-testing--ud549'
+                'url': 'https://www.udacity.com'
             }]
         };
     }
@@ -217,6 +192,7 @@ var view = {
 
     footer: function() {
         /*Footer*/
+        $('#main').append(internationalizeButton);
 
         function inName() {
             var Name = name.split(' ');
@@ -225,6 +201,15 @@ var view = {
             var NewName = newName1 + ' ' + newName2;
             return NewName;
         }
+    },
+    music: function() {
+
+        //music volume
+        window.onload = function() {
+            var vid = document.getElementById('audioPlay');
+            vid.volume = 0.4;
+        }
+
     }
 }
 
@@ -237,6 +222,7 @@ var oct = {
         view.project();
         view.education();
         view.footer();
+        view.music();
     }
 }
 

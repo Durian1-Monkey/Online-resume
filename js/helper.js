@@ -1,14 +1,14 @@
 /*
 
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support I code in this course.
+This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
 
-Don't worry, I'll learn what's going on in this file throughout the course. I won't need to make any changes to it until I start experimenting with inserting a Google Map in Problem Set 3.
+Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
 
 Cameron Pittman
 */
 /*
-These are HTML strings. As part of the course, I'll be using JavaScript functions
-replace the %data% placeholder text I see in them.
+These are HTML strings. As part of the course, you'll be using JavaScript functions
+replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span id="role">%data%</span><hr/>';
@@ -61,8 +61,19 @@ var HTMLconnectSkype = '<br><a href="#">%data%</a>';
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
+
 /*
-The next few lines about clicks are for the Collecting Click Locations.
+The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
+*/
+$(document).ready(function() {
+    $('button').click(function() {
+        var iName = inName() || function() {};
+        $('#name').html(iName);
+    });
+});
+
+/*
+The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
 */
 clickLocations = [];
 
@@ -75,6 +86,7 @@ function logClicks(x, y) {
 }
 
 $(document).click(function(loc) {
+    // your code goes here!
     logClicks(loc.pageX, loc.pageY);
 });
 
@@ -148,13 +160,15 @@ function initializeMap() {
         var bounds = window.mapBounds; // current boundaries of the map window
 
         // marker is an object with additional data about the pin for a single location
+        var Monkeyicon = "images/monkey_icon.png";
         var marker = new google.maps.Marker({
             map: map,
             position: placeData.geometry.location,
-            title: name
+            title: name,
+            icon: Monkeyicon
         });
 
-        // infoWindows are the little helper windows that open when I click
+        // infoWindows are the little helper windows that open when you click
         // or hover over a pin on a map. They usually contain more information
         // about a location.
         var infoWindow = new google.maps.InfoWindow({
@@ -225,7 +239,7 @@ function initializeMap() {
 }
 
 /*
-Uncomment the code below when I're ready to implement a Google Map!
+Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
