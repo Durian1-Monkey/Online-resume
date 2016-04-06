@@ -11,7 +11,7 @@ var model = {
                 'mobile': '06-1840-3964',
                 'email': 'morita657@gmail.com',
                 'github': 'https://github.com/Durian1-Monkey',
-                'twitter': 'No Twitter Account',
+                'LinkedIn': 'https://www.linkedin.com/in/takahiromorita',
                 'location': 'Bangkok, Thailand'
             }],
             'welcomeMessage': 'Thank you for your visiting my resume page!!',
@@ -133,10 +133,10 @@ var view = {
         for (var ctcts in model.bio.contacts) {
             var formattedMobile = HTMLmobile.replace(data, model.bio.contacts[ctcts].mobile);
             var formattedemail = HTMLemail.replace(data, model.bio.contacts[ctcts].email);
-            var formattedtwitter = HTMLtwitter.replace(data, model.bio.contacts[ctcts].twitter);
+            var formattedlinkedin = HTMLlinkedin.replace(data, model.bio.contacts[ctcts].LinkedIn);
             var formattedgithub = HTMLgithub.replace(data, model.bio.contacts[ctcts].github);
             var formattedlocation = HTMLlocation.replace(data, model.bio.contacts[ctcts].location);
-            var formattedTotalBio = formattedMobile + formattedemail + formattedtwitter + formattedgithub + formattedlocation;
+            var formattedTotalBio = formattedMobile + formattedemail + formattedlinkedin + formattedgithub + formattedlocation;
             $('#topContacts').append(formattedTotalBio);
         }
         var welcomenessage = HTMLwelcomeMsg.replace(data, model.bio.welcomeMessage);
