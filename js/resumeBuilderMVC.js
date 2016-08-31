@@ -38,6 +38,12 @@ var model = {
                 'location': 'Bangkok, Thailand',
                 'dates': '2015',
                 'description': 'Designs products as the designer. Tests the quality as the engineer. Manage our staffs and lead them. Customer relations for making products and negotiate those prices.'
+            }, {
+                'employer': 'CODIUM',
+                'title': 'Software developer',
+                'location': 'Bangkok, Thailand',
+                'dates': '2016',
+                'description': 'Design and build web application using various languages, especially HTML, CSS and Javascript(AngularJS). Coordinate between clients and local staffs.'
             }]
         };
         /*projects*/
