@@ -1,7 +1,4 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-var model = {
+let model = {
     /*biography*/
     init: function() {
         this.bio = {
@@ -10,12 +7,12 @@ var model = {
             'contacts': [{
                 'mobile': '06-1840-3964',
                 'email': 'morita657@gmail.com',
-                'github': 'https://github.com/Durian1-Monkey',
+                'github': 'https://github.com/morita657',
                 'LinkedIn': 'https://www.linkedin.com/in/takahiromorita',
                 'location': 'Bangkok, Thailand'
             }],
             'welcomeMessage': 'Thank you for your visiting my resume page!!',
-            'skills': ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Git & GitHub', 'KnockoutJS', ''],
+            'skills': ['HTML', 'CSS', 'JavaScript', 'jQuery'],
             'biopic': 'images/fry.jpg'
         };
         /*Work*/
@@ -126,33 +123,33 @@ var model = {
 };
 
 
-var data = '%data%';
-var $header = $('#header');
+let data = '%data%';
+let $header = $('#header');
 
-var view = {
+let view = {
     bio: function() {
         'use strict';
-        var formattedName = HTMLheaderName.replace(data, model.bio["name"]);
-        var formattedRole = HTMLheaderRole.replace(data, model.bio["role"]);
+        let formattedName = HTMLheaderName.replace(data, model.bio["name"]);
+        let formattedRole = HTMLheaderRole.replace(data, model.bio["role"]);
         $header.prepend(formattedRole);
         $header.prepend(formattedName);
-        for (var ctcts in model.bio.contacts) {
-            var formattedMobile = HTMLmobile.replace(data, model.bio.contacts[ctcts].mobile);
-            var formattedemail = HTMLemail.replace(data, model.bio.contacts[ctcts].email);
-            var formattedlinkedin = HTMLlinkedin.replace(data, model.bio.contacts[ctcts].LinkedIn);
-            var formattedgithub = HTMLgithub.replace(data, model.bio.contacts[ctcts].github);
-            var formattedlocation = HTMLlocation.replace(data, model.bio.contacts[ctcts].location);
-            var formattedTotalBio = formattedMobile + formattedemail + formattedlinkedin + formattedgithub + formattedlocation;
+        for (let ctcts in model.bio.contacts) {
+            let formattedMobile = HTMLmobile.replace(data, model.bio.contacts[ctcts].mobile);
+            let formattedemail = HTMLemail.replace(data, model.bio.contacts[ctcts].email);
+            let formattedlinkedin = HTMLlinkedin.replace(data, model.bio.contacts[ctcts].LinkedIn);
+            let formattedgithub = HTMLgithub.replace(data, model.bio.contacts[ctcts].github);
+            let formattedlocation = HTMLlocation.replace(data, model.bio.contacts[ctcts].location);
+            let formattedTotalBio = formattedMobile + formattedemail + formattedlinkedin + formattedgithub + formattedlocation;
             $('#topContacts').append(formattedTotalBio);
         }
-        var welcomenessage = HTMLwelcomeMsg.replace(data, model.bio.welcomeMessage);
+        let welcomenessage = HTMLwelcomeMsg.replace(data, model.bio.welcomeMessage);
         $header.append(welcomenessage);
-        var pictureURL = HTMLbioPic.replace(data, model.bio.biopic);
+        let pictureURL = HTMLbioPic.replace(data, model.bio.biopic);
         $header.append(pictureURL);
 
         if (model.bio.skills.length > 0) {
             $header.append(HTMLskillsStart);
-            var formattedSkill = HTMLskills.replace(data, model.bio.skills[0]);
+            let formattedSkill = HTMLskills.replace(data, model.bio.skills[0]);
             $('#skills').append(formattedSkill);
             formattedSkill = HTMLskills.replace(data, model.bio.skills[1]);
             $('#skills').append(formattedSkill);
@@ -165,14 +162,14 @@ var view = {
     },
     work: function() {
         // Display Work Experience
-        for (var job in model.work.jobs) {
+        for (let job in model.work.jobs) {
             $('#workExperience').append(HTMLworkStart);
-            var formattedEmployer = HTMLworkEmployer.replace(data, model.work.jobs[job].employer);
-            var formattedWorkTitle = HTMLworkTitle.replace(data, model.work.jobs[job].title);
-            var formattedLocation = HTMLworkLocation.replace(data, model.work.jobs[job].location);
-            var formattedWorkDates = HTMLworkDates.replace(data, model.work.jobs[job].dates);
-            var formattedDescription = HTMLworkDescription.replace(data, model.work.jobs[job].description);
-            var formattedEmployerTitle = formattedEmployer + formattedWorkTitle + formattedLocation + formattedWorkDates + formattedDescription;
+            let formattedEmployer = HTMLworkEmployer.replace(data, model.work.jobs[job].employer);
+            let formattedWorkTitle = HTMLworkTitle.replace(data, model.work.jobs[job].title);
+            let formattedLocation = HTMLworkLocation.replace(data, model.work.jobs[job].location);
+            let formattedWorkDates = HTMLworkDates.replace(data, model.work.jobs[job].dates);
+            let formattedDescription = HTMLworkDescription.replace(data, model.work.jobs[job].description);
+            let formattedEmployerTitle = formattedEmployer + formattedWorkTitle + formattedLocation + formattedWorkDates + formattedDescription;
             $('.work-entry:last').append(formattedEmployerTitle);
         };
 
@@ -180,13 +177,13 @@ var view = {
     project: function() {
 
         //Displays Projects
-        for (var project in model.projects.projects) {
+        for (let project in model.projects.projects) {
             $('#projects').append(HTMLprojectStart);
-            var formattedprojectTitle = HTMLprojectTitle.replace(data, model.projects.projects[project].title);
-            var formattedprojectDates = HTMLprojectDates.replace(data, model.projects.projects[project].dates);
-            var formattedprojectDescript = HTMLprojectDescription.replace(data, model.projects.projects[project].description);
-            var formattedprojectIMage = HTMLprojectImage.replace(data, model.projects.projects[project].images);
-            var formattedProjects = formattedprojectTitle + formattedprojectDates + formattedprojectDescript + formattedprojectIMage;
+            let formattedprojectTitle = HTMLprojectTitle.replace(data, model.projects.projects[project].title);
+            let formattedprojectDates = HTMLprojectDates.replace(data, model.projects.projects[project].dates);
+            let formattedprojectDescript = HTMLprojectDescription.replace(data, model.projects.projects[project].description);
+            let formattedprojectIMage = HTMLprojectImage.replace(data, model.projects.projects[project].images);
+            let formattedProjects = formattedprojectTitle + formattedprojectDates + formattedprojectDescript + formattedprojectIMage;
             $('.project-entry:last').append(formattedProjects);
         };
 
@@ -195,26 +192,26 @@ var view = {
     education: function() {
 
         //Display Education
-        for (var educations in model.education.schools) {
+        for (let educations in model.education.schools) {
             $('#education').append(HTMLschoolStart);
-            var formattedschool = HTMLschoolName.replace(data, model.education.schools[educations].name);
-            var formattedDegree = HTMLschoolDegree.replace(data, model.education.schools[educations].degree);
-            var formattedDates = HTMLschoolDates.replace(data, model.education.schools[educations].dates);
-            var formattedschoolLocation = HTMLschoolLocation.replace(data, model.education.schools[educations].location);
-            var formattedmajor = HTMLschoolMajor.replace(data, model.education.schools[educations].majors);
-            var formattedUrl = HTMLschoolURL.replace(data, model.education.schools[educations].url);
-            var formattededucation = formattedschool + formattedDegree + formattedDates + formattedschoolLocation + formattedmajor + formattedUrl;
+            let formattedschool = HTMLschoolName.replace(data, model.education.schools[educations].name);
+            let formattedDegree = HTMLschoolDegree.replace(data, model.education.schools[educations].degree);
+            let formattedDates = HTMLschoolDates.replace(data, model.education.schools[educations].dates);
+            let formattedschoolLocation = HTMLschoolLocation.replace(data, model.education.schools[educations].location);
+            let formattedmajor = HTMLschoolMajor.replace(data, model.education.schools[educations].majors);
+            let formattedUrl = HTMLschoolURL.replace(data, model.education.schools[educations].url);
+            let formattededucation = formattedschool + formattedDegree + formattedDates + formattedschoolLocation + formattedmajor + formattedUrl;
             $('.education-entry:last').append(formattededucation);
         };
         //Display Online courses
         if (true) {
             $('.education-entry').append(HTMLonlineClasses);
-            for (var course in model.education.onlineCourses) {
-                var formattedOnlineTitle = HTMLonlineTitle.replace(data, model.education.onlineCourses[course].title);
-                var formattedOnlineSchool = HTMLonlineSchool.replace(data, model.education.onlineCourses[course].school);
-                var formattedOnlineDates = HTMLonlineDates.replace(data, model.education.onlineCourses[course].date);
-                var formattedOnlineURL = HTMLonlineURL.replace(data, model.education.onlineCourses[course].url);
-                var formattedOnlineEducation = formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates + formattedOnlineURL;
+            for (let course in model.education.onlineCourses) {
+                let formattedOnlineTitle = HTMLonlineTitle.replace(data, model.education.onlineCourses[course].title);
+                let formattedOnlineSchool = HTMLonlineSchool.replace(data, model.education.onlineCourses[course].school);
+                let formattedOnlineDates = HTMLonlineDates.replace(data, model.education.onlineCourses[course].date);
+                let formattedOnlineURL = HTMLonlineURL.replace(data, model.education.onlineCourses[course].url);
+                let formattedOnlineEducation = formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates + formattedOnlineURL;
                 $('.education-entry:last').append(formattedOnlineEducation);
             };
         }
@@ -225,17 +222,17 @@ var view = {
         /*Footer*/
 
         function inName() {
-            var Name = name.split(' ');
-            var newName1 = Name[0];
-            var newName2 = Name[1].toUpperCase();
-            var NewName = newName1 + ' ' + newName2;
+            let Name = name.split(' ');
+            let newName1 = Name[0];
+            let newName2 = Name[1].toUpperCase();
+            let NewName = newName1 + ' ' + newName2;
             return NewName;
         }
     }
 }
 
 
-var oct = {
+let oct = {
     init: function() {
         model.init();
         view.bio();
@@ -246,6 +243,6 @@ var oct = {
     }
 }
 
-//you want to see a map?
+//I want to see a map!
 $('#mapDiv').append(googleMap);
 oct.init();

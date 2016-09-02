@@ -1,65 +1,57 @@
-/*
 
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support I code in this course.
-
-Don't worry, I'll learn what's going on in this file throughout the course. I won't need to make any changes to it until I start experimenting with inserting a Google Map in Problem Set 3.
-
-Cameron Pittman
-*/
 /*
 These are HTML strings. As part of the course, I'll be using JavaScript functions
 replace the %data% placeholder text I see in them.
 */
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span id="role">%data%</span><hr/>';
+let HTMLheaderName = '<h1 id="name">%data%</h1>';
+let HTMLheaderRole = '<span id="role">%data%</span><hr/>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">Contacts</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLlinkedin = '<li class="flex-item"><span class="orange-text">LinkedIn</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+let HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">Contacts</span><span class="white-text">%data%</span></li>';
+let HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
+let HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</a></span></li>';
+let HTMLlinkedin = '<li class="flex-item"><span class="orange-text">LinkedIn</span><span class="white-text">%data%</span></li>';
+let HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</a></span></li>';
+let HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '<span class="welcome-message" id=".right-green">%data%</span>';
+let HTMLbioPic = '<img src="%data%" class="biopic">';
+let HTMLwelcomeMsg = '<span class="welcome-message" id=".right-green">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+let HTMLskillsStart = '<h3 id="skills-h3">Skills:</h3><ul id="skills" class="flex-box"></ul>';
+let HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
-var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
-var HTMLworkTitle = ' - %data%</a>';
-var HTMLworkDates = '<div class="date-text">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+let HTMLworkStart = '<div class="work-entry"></div>';
+let HTMLworkEmployer = '<a href="#">%data%';
+let HTMLworkTitle = ' - %data%</a>';
+let HTMLworkDates = '<div class="date-text">%data%</div>';
+let HTMLworkLocation = '<div class="location-text">%data%</div>';
+let HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
+let HTMLprojectStart = '<div class="project-entry"></div>';
+let HTMLprojectTitle = '<a href="#">%data%</a>';
+let HTMLprojectDates = '<div class="date-text">%data%</div>';
+let HTMLprojectDescription = '<p><br>%data%</p>';
+let HTMLprojectImage = '<img src="%data%">';
 
-var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
-var HTMLschoolDates = '<div class="date-text">%data%</div>';
-var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
-var HTMLschoolURL = '<a href="#">%data%';
+let HTMLschoolStart = '<div class="education-entry"></div>';
+let HTMLschoolName = '<a href="#">%data%';
+let HTMLschoolDegree = ' -- %data%</a>';
+let HTMLschoolDates = '<div class="date-text">%data%</div>';
+let HTMLschoolLocation = '<div class="location-text">%data%</div>';
+let HTMLschoolMajor = '<em><br>Major: %data%</em>';
+let HTMLschoolURL = '<a href="#">%data%';
 
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
-var HTMLonlineDates = '<div class="date-text">%data%</div><br>';
-var HTMLonlineURL = '<a href="#">%data%';
+let HTMLonlineClasses = '<h3>Online Classes</h3>';
+let HTMLonlineTitle = '<a href="#">%data%';
+let HTMLonlineSchool = ' - %data%</a>';
+let HTMLonlineDates = '<div class="date-text">%data%</div><br>';
+let HTMLonlineURL = '<a href="#">%data%';
 
-var HTMLconnectEmail = '<br><a href="#">%data%</a>';
-var HTMLconnectGithub = '<br><a href="#">%data%</a>';
-var HTMLconnectSkype = '<br><a href="#">%data%</a>';
+let HTMLconnectEmail = '<br><a href="#">%data%</a>';
+let HTMLconnectGithub = '<br><a href="#">%data%</a>';
+let HTMLconnectSkype = '<br><a href="#">%data%</a>';
 
-var internationalizeButton = '<button>Internationalize</button>';
-var googleMap = '<div id="map"></div>';
+let internationalizeButton = '<button>Internationalize</button>';
+let googleMap = '<div id="map"></div>';
 
 /*
 The next few lines about clicks are for the Collecting Click Locations.
@@ -81,11 +73,11 @@ $(document).click(function(loc) {
 
 
 /*
-This is the fun part. Here's where we generate the custom Google Map for the website.
+This is the fun part. Here's where I generate the custom Google Map for the website.
 See the documentation below for more details.
 https://developers.google.com/maps/documentation/javascript/reference
 */
-var map; // declares a global map variable
+let map; // declares a global map variable
 
 
 /*
@@ -93,14 +85,14 @@ Start here! initializeMap() is called when page is loaded.
 */
 function initializeMap() {
 
-    var locations;
+    let locations;
 
-    var mapOptions = {
+    let mapOptions = {
         disableDefaultUI: true
     };
 
     /* 
-    For the map to be displayed, the googleMap var must be
+    For the map to be displayed, the googleMap variable must be
     appended to #mapDiv in resumeBuilder.js. 
     */
     map = new google.maps.Map(document.querySelector('#map'), mapOptions);
@@ -114,22 +106,22 @@ function initializeMap() {
         model.init();
 
         // initializes an empty array
-        var locations = [];
+        let locations = [];
 
         // adds the single location property from bio to the locations array
-        for (var bios in model.bio.contacts) {
+        for (let bios in model.bio.contacts) {
             locations.push(model.bio.contacts[bios].location);
         }
 
         // iterates through school locations and appends each location to
         // the locations array
-        for (var school in model.education.schools) {
+        for (let school in model.education.schools) {
             locations.push(model.education.schools[school].location);
         }
 
         // iterates through work locations and appends each location to
         // the locations array
-        for (var job in model.work.jobs) {
+        for (let job in model.work.jobs) {
             locations.push(model.work.jobs[job].location);
         }
         return locations;
@@ -142,13 +134,13 @@ function initializeMap() {
     */
     function createMapMarker(placeData) {
         // The next lines save location data from the search result object to local variables
-        var lat = placeData.geometry.location.lat();
-        var lon = placeData.geometry.location.lng();
-        var name = placeData.formatted_address; // name of the place from the place service
-        var bounds = window.mapBounds; // current boundaries of the map window
+        let lat = placeData.geometry.location.lat();
+        let lon = placeData.geometry.location.lng();
+        let name = placeData.formatted_address; // name of the place from the place service
+        let bounds = window.mapBounds; // current boundaries of the map window
 
         // marker is an object with additional data about the pin for a single location
-        var marker = new google.maps.Marker({
+        let marker = new google.maps.Marker({
             map: map,
             position: placeData.geometry.location,
             title: name
@@ -157,7 +149,7 @@ function initializeMap() {
         // infoWindows are the little helper windows that open when I click
         // or hover over a pin on a map. They usually contain more information
         // about a location.
-        var infoWindow = new google.maps.InfoWindow({
+        let infoWindow = new google.maps.InfoWindow({
             content: name
         });
 
@@ -196,13 +188,13 @@ function initializeMap() {
 
         // creates a Google place search service object. PlacesService does the work of
         // actually searching for location data.
-        var service = new google.maps.places.PlacesService(map);
+        let service = new google.maps.places.PlacesService(map);
 
         // Iterates through the array of locations, creates a search object for each location
-        for (var place in locations) {
+        for (let place in locations) {
 
             // the search request object
-            var request = {
+            let request = {
                 query: locations[place]
             };
 
